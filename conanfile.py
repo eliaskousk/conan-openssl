@@ -8,7 +8,7 @@ class OpenSSLConan(ConanFile):
     version = "1.0.2j"
     settings = "os", "compiler", "arch", "build_type"
     url="http://github.com/lasote/conan-openssl"
-    # https://github.com/openssl/openssl/blob/OpenSSL_1_0_2c/INSTALL
+    # https://github.com/openssl/openssl/blob/OpenSSL_1_0_2j/INSTALL
     options = {"no_threads": [True, False],
                "no_electric_fence": [True, False],
                "no_zlib": [True, False],
@@ -62,7 +62,7 @@ class OpenSSLConan(ConanFile):
         if not self.options.no_electric_fence and self.settings.os == "Linux":
             private = False if self.options.shared else True
             if self.counter_config==2:
-                self.requires.add("electric-fence/2.2.0@lasote/stable", private=private)
+                self.requires.add("electric-fence/2.2.0@eliaskousk/stable", private=private)
             self.options["electric-fence"].shared = self.options.shared
         else:
             if "electric-fence" in self.requires:
@@ -79,7 +79,7 @@ class OpenSSLConan(ConanFile):
     @property
     def subfolder(self):
         return "openssl-%s" % self.version
-    
+
     def build(self):
         '''
             For Visual Studio (tried with 2010) compiling need:
@@ -192,7 +192,7 @@ class OpenSSLConan(ConanFile):
             for old, new in renames.iteritems():
                 if os.path.exists(old):
                     os.rename(old, new)
-        
+
         def mingw_make(config_options_string):
             # NOT WORKING, PLEASE, ANY HELP WOULD BE GREAT.
             # WITH THE MSYS TOOLS IN THE PATH IT RUNS MAKE BUT IT FAILS
