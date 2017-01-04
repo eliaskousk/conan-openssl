@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lasote/conan-openssl.svg?branch=release/1.0.2j)](https://travis-ci.org/eliaskousk/conan-openssl)
+[![Build Status](https://travis-ci.org/eliaskousk/conan-openssl.svg?branch=release/1.0.2j)](https://travis-ci.org/eliaskousk/conan-openssl)
 
 # conan-openssl
 
