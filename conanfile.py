@@ -7,7 +7,7 @@ class OpenSSLConan(ConanFile):
     name = "OpenSSL"
     version = "1.0.2j"
     settings = "os", "compiler", "arch", "build_type"
-    url="http://github.com/lasote/conan-openssl"
+    url="http://github.com/eliaskousk/conan-openssl"
     # https://github.com/openssl/openssl/blob/OpenSSL_1_0_2j/INSTALL
     options = {"no_threads": [True, False],
                "no_electric_fence": [True, False],
