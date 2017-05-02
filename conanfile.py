@@ -69,7 +69,7 @@ class OpenSSLConan(ConanFile):
                 del self.requires["electric-fence"]
 
         if not self.options.no_zlib:
-            self.requires.add("zlib/1.2.9@lasote/stable", private=False)
+            self.requires.add("zlib/1.2.11@lasote/stable", private=False)
             self.options["zlib"].shared = self.options.zlib_dynamic
 
         else:
